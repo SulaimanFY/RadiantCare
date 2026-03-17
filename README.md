@@ -12,43 +12,37 @@ This project is **open-source** and the backend code (`main.py`, `rag.py`, `grad
 
 The user uploads a chest X-ray image, displayed with its filename and size. They can optionally fill in clinical context such as age, sex, and additional notes. Before running the analysis, they choose between "Predictions only" for a faster result or "Full report" for a complete AI-generated medical report.
 
-![Upload and setup](./docs/images/1.png)  
-[View full screenshot](https://raw.githubusercontent.com/SulaimanFY/RadiantCare/main/docs/images/1.png)
+[![Upload and setup](./docs/images/1.png)](https://raw.githubusercontent.com/SulaimanFY/RadiantCare/main/docs/images/1.png)
 
 **2. Full analysis result**
 
 After selecting "Full report," the result page displays the X-ray overlaid with a Grad-CAM heatmap highlighting the region most relevant to the top prediction. On the right, an AI-generated report summarizes findings with probabilities, suggests next steps, and includes a medical disclaimer. Below the heatmap, all model predictions are listed with color-coded confidence bars. A chat panel is available for follow-up questions. Inference time (e.g. around 284 ms) is shown in the header.
 
-![Full analysis result](./docs/images/2.png)  
-[View full screenshot](https://raw.githubusercontent.com/SulaimanFY/RadiantCare/main/docs/images/2.png)
+[![Full analysis result](./docs/images/2.png)](https://raw.githubusercontent.com/SulaimanFY/RadiantCare/main/docs/images/2.png)
 
 **3. Full list of model predictions**
 
 A closer look at the complete list of predictions returned by the model. Each condition is shown with a confidence percentage, a color-coded bar (red for high risk, orange for moderate, green for low), and a warning or check icon for quick visual triage.
 
-![Model predictions list](./docs/images/3.png)  
-[View full screenshot](https://raw.githubusercontent.com/SulaimanFY/RadiantCare/main/docs/images/3.png)
+[![Model predictions list](./docs/images/3.png)](https://raw.githubusercontent.com/SulaimanFY/RadiantCare/main/docs/images/3.png)
 
 **4. Chat and urgency assessment**
 
 The built-in chat assistant answers a follow-up question about urgency. It returns a structured assessment listing detected conditions with their probabilities, then explains the specific risks of delaying care, such as pneumothorax progressing to life-threatening tension pneumothorax or pleural effusion potentially representing hemothorax.
 
-![Chat and urgency assessment](./docs/images/4.png)  
-[View full screenshot](https://raw.githubusercontent.com/SulaimanFY/RadiantCare/main/docs/images/4.png)
+[![Chat and urgency assessment](./docs/images/4.png)](https://raw.githubusercontent.com/SulaimanFY/RadiantCare/main/docs/images/4.png)
 
 **5. Predictions-only mode result**
 
 When the user selects "Predictions only," the analysis runs significantly faster (around 89 ms versus 284 ms in full-report mode). The result page shows the Grad-CAM heatmap and the list of predictions without generating a written report, making it well suited for quick screening when a detailed narrative is not needed.
 
-![Predictions-only mode](./docs/images/5.png)  
-[View full screenshot](https://raw.githubusercontent.com/SulaimanFY/RadiantCare/main/docs/images/5.png)
+[![Predictions-only mode](./docs/images/5.png)](https://raw.githubusercontent.com/SulaimanFY/RadiantCare/main/docs/images/5.png)
 
 **6. API documentation**
 
 The Swagger UI documents the RadiantCare REST API built with FastAPI. It lists all available endpoints (health check, prediction, full report generation, standalone report, and chat) along with their request and response schemas, enabling straightforward integration into other systems or workflows.
 
-![API documentation](./docs/images/6.png)  
-[View full screenshot](https://raw.githubusercontent.com/SulaimanFY/RadiantCare/main/docs/images/6.png)
+[![API documentation](./docs/images/6.png)](https://raw.githubusercontent.com/SulaimanFY/RadiantCare/main/docs/images/6.png)
 
 ---
 
