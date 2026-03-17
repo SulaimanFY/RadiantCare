@@ -1,0 +1,40 @@
+# ---------------------------------------------------------------------------
+# Dockerfile for the RadiantCare API (FastAPI + PyTorch)
+# ---------------------------------------------------------------------------
+# Context must be the project root (where this file lives).
+#
+# Build:   docker build -f Dockerfile.api -t radiantcare-api .
+# Run:     docker run -p 8000:8000 --env-file .env radiantcare-api
+# ---------------------------------------------------------------------------
+
+FROM python:3.11-slim
+
+# Prevent .pyc files and enable real-time log output
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+
+WORKDIR /app
+
+# System libs needed by Pillow, PyMuPDF, and torch
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        gcc libglib2.0-0 libsm6 libxext6 libxrender-dev && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install Python dependencies (cached unless requirements.txt changes)
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the API source code
+COPY api/ ./api/
+
+# Copy pathologies/ docs (needed by RAG at startup)
+COPY pathologies/ ./pathologies/
+
+# Copy the model checkpoint
+COPY models/ ./models/
+
+EXPOSE 8000
+
+# Start uvicorn; 0.0.0.0 makes it reachable outside the container
+CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]

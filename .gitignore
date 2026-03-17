@@ -1,0 +1,30 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+*_copy.py
+
+# Environment (contains secrets)
+.env
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# Model checkpoint (too large for git — use Git LFS or download separately)
+models/*.pth
+
+# IDE
+.vscode/
+.cursor/
+*.swp
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/

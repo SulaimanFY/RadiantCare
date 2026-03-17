@@ -1,0 +1,30 @@
+# Ignore files that should not be copied into Docker images
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# IDE
+.vscode/
+.cursor/
+*.swp
+
+# Git
+.git/
+.gitignore
+
+# Env (loaded via --env-file, not baked into the image)
+.env
+
+# Notebooks (not needed at runtime)
+notebook.ipynb
+
+# Docs
+docs/
+README.md

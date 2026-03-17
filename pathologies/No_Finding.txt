@@ -1,0 +1,15 @@
+No Finding (No Significant Abnormality Detected)
+
+Definition
+"No Finding" indicates that on this study no positive label among the supported pathologies was detected above the model’s threshold. The supported labels include atelectasis, cardiomegaly, consolidation, edema, enlarged cardiomediastinum, fracture, lung lesion, lung opacity, pleural effusion, pleural other, pneumonia, pneumothorax, and support devices.
+
+What it means
+- The algorithm did not flag any of these specific findings on this image.
+- It does not rule out all thoracic or extra-thoracic disease.
+- It does not replace clinical assessment or other tests.
+
+Recommendations
+- Always correlate with clinical history, symptoms, and prior imaging.
+- If symptoms or risk factors persist, consider further workup or imaging as indicated.
+- Follow-up and repeat imaging should be based on clinical judgment and guidelines.
+- In screening or follow-up settings, "no finding" may support routine follow-up when consistent with the clinical picture.

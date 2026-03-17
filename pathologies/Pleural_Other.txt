@@ -1,0 +1,22 @@
+Pleural Other (Pleural Abnormalities Other Than Effusion)
+
+Definition
+"Pleural Other" refers to pleural findings on chest X-ray that are not pleural effusion. These include pleural thickening, pleural plaques, pleural masses or nodules, fibrothorax, and other structural pleural changes.
+
+Common causes and types
+
+- Pleural thickening: Often due to prior inflammation, infection (e.g. TB, empyema), hemothorax, or asbestos exposure. Can be diffuse or focal. May reduce lung volume.
+- Pleural plaques: Typically benign, calcified or non-calcified. Strongly associated with asbestos exposure. Usually bilateral, along the chest wall or diaphragm. Do not usually cause symptoms but indicate past exposure.
+- Pleural masses/nodules: Less common. Differential includes localized fibrous tumor of the pleura, metastasis, mesothelioma. Further imaging (CT) and sometimes biopsy are needed.
+- Fibrothorax: Dense fibrous peel around the lung after long-standing effusion or empyema. Can cause trapped lung and restrictive physiology.
+
+Radiographic appearance
+- Thickening: band-like or diffuse opacity along the pleural margin, sometimes with volume loss.
+- Plaques: focal, often calcified, along chest wall or diaphragm.
+- Masses: focal soft-tissue opacity projecting from the pleura.
+
+Clinical approach
+- Correlate with history (asbestos, prior infection, malignancy).
+- CT chest is often indicated to characterize extent, calcification, and to exclude underlying lung or pleural malignancy.
+- If asbestos exposure and plaques: document exposure; follow-up per guidelines; no specific treatment for plaques.
+- If thickening or mass is new or symptomatic: further workup and referral as appropriate.

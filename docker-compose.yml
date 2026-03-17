@@ -1,0 +1,32 @@
+# ---------------------------------------------------------------------------
+# docker-compose.yml — run the full RadiantCare stack with one command
+# ---------------------------------------------------------------------------
+# Usage:
+#   docker compose up --build        (build and start both services)
+#   docker compose up -d             (start in background)
+#   docker compose down              (stop everything)
+# ---------------------------------------------------------------------------
+
+services:
+
+  # --- Backend API (FastAPI + PyTorch) ---
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    ports:
+      - "8000:8000"        # host:container — API accessible at http://localhost:8000
+    env_file:
+      - .env               # load MODEL_PATH, OPENAI_API_KEY, etc.
+    restart: unless-stopped
+
+  # --- Frontend (React + nginx) ---
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "3000:80"          # host:container — frontend at http://localhost:3000
+    depends_on:
+      - api                # start the API before the frontend
+    restart: unless-stopped
