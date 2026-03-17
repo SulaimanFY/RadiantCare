@@ -15,6 +15,11 @@ This document describes how to run and deploy RadiantCare using **Docker**. The 
 - **Model file**: The API image is built with `COPY models/ ./models/`. If `models/` is empty or does not contain `best_model.pth`, the container will start but the API will fail to load the model (reported on `/health`). Either place `best_model.pth` in `models/` before running `docker compose build`, or after deployment mount the model at runtime and set `MODEL_PATH` to that path inside the container.
 - **RAG documents**: The image also copies `pathologies/`. If that folder is empty, RAG will report "No documents found" and reports/chat will run without RAG context. Add at least one `.txt` or `.pdf` in `pathologies/` before building if you want RAG.
 
+To obtain a compatible checkpoint, either:
+
+- train a model with `notebooks/notebook.ipynb` and export the best weights as `models/best_model.pth`, or  
+- provide your own `.pth` file that matches the `ChestXrayClassifier` architecture and update `MODEL_PATH` accordingly.
+
 ---
 
 ## 1. Local run with Docker (recommended)

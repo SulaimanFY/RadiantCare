@@ -80,7 +80,7 @@ Input image (3, 224, 224)
 - **Optimizer**: AdamW with ReduceLROnPlateau scheduler.
 - **Augmentation**: RandomHorizontalFlip, RandomRotation(10), ColorJitter.
 - **Training**: Mixed precision (torch.amp) when GPU is available, early stopping.
-- **Checkpoint**: best_model.pth saved when validation loss improves.
+- **Checkpoint**: the best model is saved as `models/best_model.pth` (not versioned in git; can be replaced by any compatible checkpoint pointed to by `MODEL_PATH`).
 
 ### Model card (intended use, limitations, ethics)
 

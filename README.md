@@ -204,6 +204,17 @@ Full API docs (auto-generated): **[http://localhost:8000/docs](http://localhost:
 
 ---
 
+## Model weights
+
+This repository does **not** include the trained checkpoint (large file). To run the API end to end you need a compatible `.pth` file:
+
+1. **Train your own model** using `notebooks/notebook.ipynb`, then save the best checkpoint as `models/best_model.pth` (or point `MODEL_PATH` in `.env` to your file).
+2. **Plug in an existing checkpoint** that matches the `ChestXrayClassifier` architecture (DenseNet‑121 backbone + 14-label head with the CheXpert-style schema) and set `MODEL_PATH` accordingly.
+
+If `models/best_model.pth` is missing or incompatible, the API will start but `/health` will report `model_loaded = false` and prediction endpoints will return an error.
+
+---
+
 ## Tech stack
 
 
