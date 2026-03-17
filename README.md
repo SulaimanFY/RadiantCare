@@ -2,8 +2,6 @@
 
 **AI-powered chest X-ray analysis** — upload a chest X-ray, get multilabel pathology predictions with Grad-CAM heatmaps, and receive an LLM-generated clinical report augmented with RAG.
 
-Built by **SulaimanFY** — 2026.
-
 This project is **open-source** and the backend code (`main.py`, `rag.py`, `gradcam.py`) is **thoroughly commented line-by-line** for readability, learning, and reproducibility.
 
 ---
@@ -241,3 +239,7 @@ If `models/best_model.pth` is missing or incompatible, the API will start but `/
 ## License
 
 This project is open-source, for educational and research purposes. It does not provide medical diagnoses.
+
+---
+
+**SulaimanFY** — 2026.
