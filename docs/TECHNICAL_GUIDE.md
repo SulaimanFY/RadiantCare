@@ -114,20 +114,25 @@ The following aligns with the spirit of [Mitchell et al., 2019 — "Model Cards 
 
 **Metrics**
 
-- Primary metric: AUROC (per-label and macro-average) on a stratified held-out test split from the same dataset. See `notebooks/notebook.ipynb` for full evaluation.
+Evaluation is performed on a stratified held-out test split (never seen during training or hyper-parameter tuning).
 
-**Results (from notebook)**
+Global metrics:
 
-Held-out test set (stratified split from the training dataset, never seen during training):
+- Test loss: **0.5494**
+- Test F1-macro: **0.6769**
+- Test Hamming loss: **0.1606**
+- Mean AUC-ROC (macro over 14 labels): **0.9156**
 
-| Metric           | Value   |
-| ---------------- | ------- |
-| Test loss        | 0.5494  |
-| Test F1-macro    | 0.6769  |
-| Test Hamming     | 0.1606  |
-| Classification report (macro avg) | precision 0.60, recall 0.84, F1 0.68 |
+From `classification_report` on the test set:
 
-Per-label AUROC and full classification report are in `notebooks/notebook.ipynb`.
+- micro avg F1: **0.73**
+- macro avg F1: **0.68**
+- weighted avg F1: **0.75**
+- samples avg F1: **0.65**
+
+These global scores reflect strong discrimination overall (mean AUC ≈ 0.92), with weaker performance on some rare or visually subtle findings such as Lung Lesion, Pleural Other and Pneumothorax (lower precision despite relatively high recall).
+
+Per-label AUC-ROC values and the full classification report are in `notebooks/notebook.ipynb`.
 
 **Explainability**
 

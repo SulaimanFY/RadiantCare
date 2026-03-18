@@ -2,6 +2,14 @@
 
 **AI-powered chest X-ray analysis** — upload a chest X-ray, get multilabel pathology predictions with Grad-CAM heatmaps, and receive an LLM-generated clinical report augmented with RAG.
 
+RadiantCare is an end-to-end system that combines:
+
+- **Computer vision & deep learning** — DenseNet-121 fine-tuned for 14-label multilabel classification on ~107k de-identified chest X-rays, with Grad-CAM heatmaps for visual explainability.
+- **Retrieval-Augmented Generation (RAG)** — pathology documents are indexed with embeddings and retrieved to enrich reports with guideline-style context.
+- **LLM / NLP** — an OpenAI Chat API-powered assistant generates structured radiology-style reports and answers clinician questions about the case.
+- **API & MLOps** — a FastAPI backend exposing `/predict`, `/full-report`, `/report`, `/chat`, `/health`, packaged with Docker and Docker Compose.
+- **Frontend** — a React interface for image upload, predictions exploration, Grad-CAM viewing, and interactive chat.
+
 This project is **open-source** and the backend code (`main.py`, `rag.py`, `gradcam.py`) is **thoroughly commented line-by-line** for readability, learning, and reproducibility.
 
 ---
@@ -49,7 +57,7 @@ The Swagger UI documents the RadiantCare REST API built with FastAPI. It lists a
 ## What it does
 
 1. **Image upload** — drag & drop or browse a chest X-ray (PNG/JPG).
-2. **14-class prediction** — a DenseNet-121 model trained on a de-identified chest X-ray dataset with a CheXpert-style 14-label schema outputs a probability for each pathology (Atelectasis, Cardiomegaly, Consolidation, Edema, Enlarged Cardiomediastinum, Fracture, Lung Lesion, Lung Opacity, No Finding, Pleural Effusion, Pleural Other, Pneumonia, Pneumothorax, Support Devices).
+2. **14-class prediction** — a DenseNet-121 model trained on ~107k de-identified chest X-ray images with a CheXpert-style 14-label schema outputs a probability for each pathology (Atelectasis, Cardiomegaly, Consolidation, Edema, Enlarged Cardiomediastinum, Fracture, Lung Lesion, Lung Opacity, No Finding, Pleural Effusion, Pleural Other, Pneumonia, Pneumothorax, Support Devices).
 3. **Grad-CAM heatmap** — highlights the regions of the image that most influenced the model's top prediction.
 4. **AI report** — an LLM (GPT-4.1-mini via OpenAI API) summarizes findings, flags red flags, and suggests next steps. The prompt is enriched with Retrieval-Augmented Generation (RAG) from a local pathology knowledge base.
 5. **Chat** — ask follow-up questions about the case; the LLM has access to predictions, report, clinical context, and RAG.
