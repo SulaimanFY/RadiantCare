@@ -34,9 +34,9 @@ A closer look at the complete list of predictions returned by the model. Each co
 
 [![Model predictions list](./docs/images/3.png)](https://raw.githubusercontent.com/SulaimanFY/RadiantCare/main/docs/images/3.png)
 
-**4. Chat and urgency assessment**
+**4. Interactive Chat Assistant**
 
-The built-in chat assistant answers a follow-up question about urgency. It returns a structured assessment listing detected conditions with their probabilities, then explains the specific risks of delaying care, such as pneumothorax progressing to life-threatening tension pneumothorax or pleural effusion potentially representing hemothorax.
+Interactive chat assistant that answers follow-up questions about the case, providing structured clinical insights based on model predictions and retrieved medical knowledge. 
 
 [![Chat and urgency assessment](./docs/images/4.png)](https://raw.githubusercontent.com/SulaimanFY/RadiantCare/main/docs/images/4.png)
 
