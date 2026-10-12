@@ -86,7 +86,7 @@ export default function ChatPanel({
               }`}
             >
               {m.role === "assistant" ? (
-                <div className="prose prose-sm max-w-none prose-headings:mt-3 prose-headings:mb-1.5 prose-headings:font-semibold prose-p:my-2 first:prose-p:mt-0 last:prose-p:mb-0 prose-ul:my-2 prose-li:my-0.5 prose-ul:list-disc prose-ol:list-decimal">
+                <div className="prose prose-sm max-w-none prose-headings:mt-3 prose-headings:mb-1.5 prose-headings:font-semibold prose-h3:text-sm [&>:first-child]:mt-0 [&>:last-child]:mb-0 prose-p:my-2 first:prose-p:mt-0 last:prose-p:mb-0 prose-ul:my-2 prose-li:my-0.5 prose-ul:list-disc prose-ol:list-decimal">
                   <ReactMarkdown>{m.content}</ReactMarkdown>
                 </div>
               ) : (

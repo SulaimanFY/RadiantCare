@@ -14,7 +14,7 @@ export default function ReportDisplay({ report, disclaimer }: Props) {
         <h3 className="text-sm font-semibold text-gray-700">AI Report</h3>
       </div>
 
-      <div className="prose prose-sm max-w-none px-4 py-4 text-gray-700">
+      <div className="prose prose-sm max-w-none px-4 py-4 text-gray-700 prose-headings:mt-4 prose-headings:mb-1.5 prose-headings:font-semibold prose-headings:text-gray-900 prose-h3:text-base [&>:first-child]:mt-0 prose-p:my-1.5 prose-ul:my-1.5 prose-li:my-0.5">
         <ReactMarkdown>{report}</ReactMarkdown>
       </div>
 
