@@ -12,19 +12,29 @@ RadiantCare is an end-to-end system that combines:
 
 This project is **open-source** and the backend code (`main.py`, `rag.py`, `gradcam.py`) is **thoroughly commented line-by-line** for readability, learning, and reproducibility.
 
+> RadiantCare is a research prototype. It is not a medical device and must not be used for diagnosis.
+
+---
+
+## Demo
+
+[![RadiantCare demo: upload a chest X-ray, read the heatmap, scores and report, ask a follow-up question](docs/demo/RadiantCare-demo-poster.jpg)](docs/demo/RadiantCare-demo.mp4)
+
+*A one-minute silent walkthrough recorded from the running app: the trained model on CPU, Grad-CAM, and real LLM calls for the report and the chat. Upload a chest X-ray with some clinical context, read the heatmap, the 14 scores and the report, then ask how urgent follow-up is. The 5.9 seconds the full analysis took are cut, and the video says so on screen. Click the image to open the video ([MP4, 6 MB](docs/demo/RadiantCare-demo.mp4)).*
+
 ---
 
 ## Screenshots
 
 **1. Upload and setup screen**
 
-The user uploads a chest X-ray image, displayed with its filename and size. They can optionally fill in clinical context such as age, sex, and additional notes. Before running the analysis, they choose between "Predictions only" for a faster result or "Full report" for a complete AI-generated medical report.
+The user uploads a chest X-ray image, displayed with its filename and size. They can optionally fill in clinical context such as age, sex, and additional notes (here a 62-year-old who has been breathless on stairs for two weeks, with ankle swelling). Before running the analysis, they choose between "Predictions only" for a faster result or "Full report" for a complete AI-generated medical report.
 
 [![Upload and setup](./docs/images/1.png)](https://raw.githubusercontent.com/SulaimanFY/RadiantCare/main/docs/images/1.png)
 
 **2. Full analysis result**
 
-After selecting "Full report," the result page displays the X-ray overlaid with a Grad-CAM heatmap highlighting the region most relevant to the top prediction. On the right, an AI-generated report summarizes findings with probabilities, suggests next steps, and includes a medical disclaimer. Below the heatmap, all model predictions are listed with color-coded confidence bars. A chat panel is available for follow-up questions. Inference time (e.g. around 284 ms) is shown in the header.
+After selecting "Full report," the result page displays the X-ray overlaid with a Grad-CAM heatmap highlighting the region most relevant to the top prediction (here cardiomegaly). On the right, an AI-generated report summarizes findings with probabilities, takes the clinical context into account, suggests next steps, and includes a medical disclaimer. Below the heatmap, all model predictions are listed with color-coded confidence bars. A chat panel is available for follow-up questions. The model's inference time is shown in the header (240 ms here, on CPU).
 
 [![Full analysis result](./docs/images/2.png)](https://raw.githubusercontent.com/SulaimanFY/RadiantCare/main/docs/images/2.png)
 
@@ -36,13 +46,13 @@ A closer look at the complete list of predictions returned by the model. Each co
 
 **4. Interactive Chat Assistant**
 
-Interactive chat assistant that answers follow-up questions about the case, providing structured clinical insights based on model predictions and retrieved medical knowledge. 
+Interactive chat assistant that answers follow-up questions about the case, providing structured clinical insights based on model predictions, the clinical context and retrieved medical knowledge. Here it is asked how urgent follow-up is and which test should come first.
 
 [![Chat and urgency assessment](./docs/images/4.png)](https://raw.githubusercontent.com/SulaimanFY/RadiantCare/main/docs/images/4.png)
 
 **5. Predictions-only mode result**
 
-When the user selects "Predictions only," the analysis runs significantly faster (around 89 ms versus 284 ms in full-report mode). The result page shows the Grad-CAM heatmap and the list of predictions without generating a written report, making it well suited for quick screening when a detailed narrative is not needed.
+When the user selects "Predictions only," no LLM call is made, so the analysis is much faster: under a second end to end in this run, against about 5 to 6 seconds for the full report. The model's own inference time is about the same in both modes (216 ms here). The result page shows the Grad-CAM heatmap and the list of predictions without generating a written report, making it well suited for quick screening when a detailed narrative is not needed.
 
 [![Predictions-only mode](./docs/images/5.png)](https://raw.githubusercontent.com/SulaimanFY/RadiantCare/main/docs/images/5.png)
 
@@ -93,6 +103,7 @@ RadiantCare/
 ├── nginx.conf              # nginx config for the frontend container
 ├── .env.example            # template for environment variables
 └── docs/                   # additional documentation
+    ├── demo/               # demo video for README
     └── images/             # screenshots for README
 ```
 
