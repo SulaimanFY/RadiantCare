@@ -20,7 +20,7 @@ This project is **open-source** and the backend code (`main.py`, `rag.py`, `grad
 
 [![RadiantCare demo: upload a chest X-ray, read the heatmap, scores and report, ask a follow-up question](docs/demo/RadiantCare-demo-poster.jpg)](docs/demo/RadiantCare-demo.mp4)
 
-*A one-minute silent walkthrough recorded from the running app: the trained model on CPU, Grad-CAM, and real LLM calls for the report and the chat. Upload a chest X-ray with some clinical context, read the heatmap, the 14 scores and the report, then ask how urgent follow-up is. The 5.9 seconds the full analysis took are cut, and the video says so on screen. Click the image to open the video ([MP4, 6 MB](docs/demo/RadiantCare-demo.mp4)).*
+*A one-minute silent walkthrough recorded from the running app: the trained model on CPU, Grad-CAM, and real LLM calls for the report and the chat. Upload a chest X-ray with some clinical context, read the heatmap, the 14 scores and the report, then ask how urgent follow-up is. The wait while the analysis runs (about 6 seconds) is cut. Click the image to open the video ([MP4, 6 MB](docs/demo/RadiantCare-demo.mp4)).*
 
 ---
 
