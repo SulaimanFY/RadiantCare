@@ -527,7 +527,11 @@ def _generate_report_text(
         "- Summarize the main findings clearly.\n"
         "- Highlight potential red flags and differentials.\n"
         "- Suggest concrete next steps (further imaging, workup, treatment options) "
-        "as appropriate. Be concise (5-8 sentences) and use clear clinical language."
+        "as appropriate.\n"
+        "Format the report in Markdown with three short sections, each starting with a "
+        "### heading: Findings, Red flags and differentials, Next steps. Use one to three "
+        "sentences or short - bullet points per section, about 120 words in total, in "
+        "clear clinical language."
     )
 
     # User message: the actual data (predictions, context, RAG excerpts)
@@ -721,8 +725,11 @@ def chat_with_assistant(payload: ChatRequest) -> ChatResponse:
         "outputs. They use you as a partner. Provide clear differential diagnoses, "
         "next steps, and treatment or workup recommendations as appropriate. "
         "Use direct clinical language; the clinician will make the final decision. "
-        "Format your reply in Markdown: use ## for section headings, - for bullet "
-        "lists, and separate paragraphs with a blank line so the answer is easy to read."
+        "Answer the question first, in one or two sentences with the key point in "
+        "**bold**, then add detail only if it helps. Format your reply in Markdown: "
+        "use ### for short section headings, - for bullet lists, and separate "
+        "paragraphs with a blank line. Keep it under about 150 words unless the "
+        "clinician asks for more."
     )
     messages: list[dict[str, str]] = [{"role": "system", "content": system_prompt}]
 
